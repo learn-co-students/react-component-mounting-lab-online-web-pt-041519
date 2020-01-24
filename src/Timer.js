@@ -6,7 +6,15 @@ class Timer extends Component {
     color: "#" + Math.floor(Math.random() * 16777215).toString(16)
   };
 
-  // add your code here
+  // Initialize timer after render
+  componentDidMount() {
+    this.interval = setInterval(this.clockTick, 1000)
+  }
+
+  // Clear interval before component removal
+  componentWillUnmount() {
+    this.stopClock()
+  }
 
   render() {
     const { time, color } = this.state;
