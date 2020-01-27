@@ -6,7 +6,19 @@ class Timer extends Component {
     color: "#" + Math.floor(Math.random() * 16777215).toString(16)
   };
 
-  // add your code here
+  componentDidMount() {
+    // Start interval processes
+    // EX: this.interval = setInterval(this.fetchWeather, 15000)
+
+    this.interval = setInterval(this.clockTick, 1000)
+  }
+
+  componentWillUnmount() {
+    // End interval processes
+    // EX: clearInterval(this.interval)
+    
+    clearInterval(this.interval)
+  }
 
   render() {
     const { time, color } = this.state;

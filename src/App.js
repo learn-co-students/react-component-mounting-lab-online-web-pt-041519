@@ -9,15 +9,11 @@ class App extends Component {
     timerIDs: []
   }
 
+  componentDidMount() {
+    // Add initial timer
 
-  //Your code here:
-
-
-
-
-
-
-
+    this.handleAddTimer()
+  }
 
 
   // No need to modify anything in render or the class methods below
